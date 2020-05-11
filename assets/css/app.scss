@@ -1,12 +1,14 @@
-@import "~bootstrap/scss/bootstrap";
 $theme-colors: (
-    "principal": #2b5bad,
-        "principalshade1": #4A71B4,
-        "principalshade2": #295BAF,
-    "complement": #FFA02B,
-        "complementshade1": #FFB559,
-        "complementshade2": #FF9E27
+    "secondary": #FFA02B,
+    "primary": #2B5BAD
 );
+@import "~bootstrap/scss/bootstrap";
+@import "node_modules/bootstrap/scss/_variables.scss";
+$principalshade1: #4A71B4;
+$principalshade2: #295BAF;
+$complementshade1: #FFB559;
+$complementshade2: #ff9e27;
+
 body {
-    background-color: lightcyan;
+    background-color: $complementshade1;
 }
