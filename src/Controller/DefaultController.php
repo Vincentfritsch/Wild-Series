@@ -14,5 +14,4 @@ class DefaultController extends \Symfony\Bundle\FrameworkBundle\Controller\Abstr
     {
         return $this->render('index.html.twig');
     }
-
 }

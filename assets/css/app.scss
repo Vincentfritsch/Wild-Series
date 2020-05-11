@@ -1,11 +1,11 @@
 @import "~bootstrap/scss/bootstrap";
 $theme-colors: (
     "principal": #2b5bad,
-        "shade1": #4A71B4,
-        "shade2": #295BAF,
+        "principalshade1": #4A71B4,
+        "principalshade2": #295BAF,
     "complement": #FFA02B,
-        "shade1": #FFB559,
-        "shade2": #FF9E27
+        "complementshade1": #FFB559,
+        "complementshade2": #FF9E27
 );
 body {
     background-color: lightcyan;
