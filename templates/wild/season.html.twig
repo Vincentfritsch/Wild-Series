@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h1>{{ serie.title}} / Saison {{ saison.number }}</h1>
+{% for episode in episodes %}
+
+<ul>
+    <li> <h4>Episode N°{{ episode.number}} : {{ episode.title }}</h4></li>
+        <h5>Résumé</h5>
+    <li> {{ episode.synopsis }}</li>
+</ul>
+
+{% endfor %}
+{% endblock %}
