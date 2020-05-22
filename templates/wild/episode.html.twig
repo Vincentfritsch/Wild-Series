@@ -1,5 +1,9 @@
-{{ serie.title }}
+{% extends 'base.html.twig' %}
+{% block body %}
+{{ serie }}
 Saison {{ episode.season }}
 Episode n° {{ episode.number }}
 Titre :{{ episode.title }}
 Résumé : {{ episode.synopsis }}
+
+{% endblock %}

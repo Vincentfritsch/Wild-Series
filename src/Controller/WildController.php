@@ -127,17 +127,16 @@ class WildController extends
      public function showEpisode(Episode $episode) :Response
     {
 
-        $seasonId = $episode->getSeason();
-        $season = $this->getDoctrine()
-                        ->getRepository(Season::class)
-                        ->findBy(['id'=> $seasonId]);
+        $seasonId = $episode->getSeason()->getNumber();
 
-        $serie = $season[0]->getProgram();
+        $season = $episode->getSeason();
 
-                return $this->render('wild/episode.html.twig', [
+        $serie = $season->getProgram()->getTitle();
+        var_dump($serie);
+        return $this->render('wild/episode.html.twig', [
                     'episode' => $episode,
-                    'saison' =>$season[0],
-                    'serie' => $serie
-                ]);
+                    'saison' =>$season,
+                    'serie' => $serie,
+        ]);
     }
 }
