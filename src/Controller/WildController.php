@@ -117,4 +117,27 @@ class WildController extends
             'episodes' => $episodes,
         ]);
     }
+
+    /**
+     * @param Episode $episode
+     * @return Response
+     * @Route("/episode/{id}", name="episode")
+     */
+
+     public function showEpisode(Episode $episode) :Response
+    {
+
+        $seasonId = $episode->getSeason();
+        $season = $this->getDoctrine()
+                        ->getRepository(Season::class)
+                        ->findBy(['id'=> $seasonId]);
+
+        $serie = $season[0]->getProgram();
+
+                return $this->render('wild/episode.html.twig', [
+                    'episode' => $episode,
+                    'saison' =>$season[0],
+                    'serie' => $serie
+                ]);
+    }
 }
