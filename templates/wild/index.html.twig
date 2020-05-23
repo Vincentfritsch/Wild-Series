@@ -1,6 +1,16 @@
 {% extends 'base.html.twig' %}
 {% block title %} All programs {% endblock %}
 {% block body %}
+    {{ form_start(formSearch) }}
+        {{ form_row(formSearch.searchField, {'attr' : {'placeholder': "Entrer une série"}}) }}
+    <button type="submit" name="btnSearch">Rechercher</button>
+    {{ form_end(formSearch) }}
+{{ serie }}
+    {{ form_start(formAdd) }}
+        {{ form_row(formAdd.name, {'attr' : {'placeholder': "Entrer une catégorie"}}) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+    {{ form_end(formAdd) }}
+
 <h1>{{ website }} : Toutes les séries de la table program :</h1>
     {%  for program in programs %}
         <div>
@@ -13,5 +23,7 @@
     <a href="{{ path('app_index') }}">
         Retour à l'accueil
     </a>
+
+
 {% endblock %}
 

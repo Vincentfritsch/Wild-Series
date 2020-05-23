@@ -42,6 +42,9 @@ class Episode
         return $this->id;
     }
 
+    /**
+     * @return Season|null
+     */
     public function getSeason(): ?Season
     {
         return $this->season;

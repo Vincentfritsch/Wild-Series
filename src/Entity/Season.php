@@ -134,4 +134,5 @@ class Season
 
         return $this;
     }
+
 }
