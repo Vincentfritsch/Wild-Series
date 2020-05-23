@@ -56,11 +56,6 @@ class WildController extends AbstractController
                 }
         }
 
-        $category = new Category();
-        $formAdd = $this->createForm(
-            CategoryType::class,
-            $category);
-
         $programs = $this->getDoctrine()
                         ->getRepository(Program::class)
                         ->findAll();
@@ -73,7 +68,6 @@ class WildController extends AbstractController
             'website' => 'Wild Séries',
             'serie' => $serie,
             'programs' => $programs,
-            'formAdd' => $formAdd->createView(),
             'formSearch' =>$formSearch->createView()
         ]);
     }

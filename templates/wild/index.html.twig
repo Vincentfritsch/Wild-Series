@@ -6,10 +6,6 @@
     <button type="submit" name="btnSearch">Rechercher</button>
     {{ form_end(formSearch) }}
 {{ serie }}
-    {{ form_start(formAdd) }}
-        {{ form_row(formAdd.name, {'attr' : {'placeholder': "Entrer une catégorie"}}) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-    {{ form_end(formAdd) }}
 
 <h1>{{ website }} : Toutes les séries de la table program :</h1>
     {%  for program in programs %}
