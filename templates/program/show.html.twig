@@ -33,6 +33,17 @@
             </tr>
         </tbody>
     </table>
+    <strong>Acteur :</strong>
+    <ul>
+        {% for actor in program.actors %}
+
+            <a href="{{ path('actor_show', {'id' : actor.id}) }}"> <li>{{ actor.name }} </li></a>
+        {% else %}
+            <li>Aucun acteur pour cette série</li>
+        {% endfor %}
+    </ul>
+
+
 
     <a href="{{ path('program_index') }}">back to list</a>
 
