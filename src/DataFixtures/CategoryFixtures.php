@@ -6,6 +6,7 @@ namespace App\DataFixtures;
 
 use App\Entity\Category;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 
 class CategoryFixtures extends Fixture
@@ -31,4 +32,6 @@ class CategoryFixtures extends Fixture
         }
        $manager->flush();
     }
+
+
 }
