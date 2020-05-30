@@ -36,6 +36,7 @@ class WildController extends AbstractController
             ProgramSearchType::class);
         $formSearch->handleRequest($request);
         $serie = "";
+
         if ($formSearch->isSubmitted())
         {
             $data = $formSearch->getData();
@@ -54,6 +55,9 @@ class WildController extends AbstractController
                 'seasons' => $seasons
             ]);
                 }
+            return $this->render('navbar.html.twig', [
+                'formSearch' =>$formSearch->createView()
+            ]);
         }
 
         $programs = $this->getDoctrine()

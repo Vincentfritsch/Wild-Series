@@ -1,10 +1,14 @@
 
 {% extends 'base.html.twig'%}
+{% block title %}  Nouvelle catégorie {% endblock %}
 {% block body %}
 
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-    {{ form_end(form) }}
+{{ form_start(form) }}
+    <div class="my-custom-class-for-errors">
+        {{ form_errors(form) }}
+    </div>
+{{ form_widget(form) }}
+    <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
 
 {% endblock %}

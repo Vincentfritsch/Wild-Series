@@ -20,6 +20,8 @@ class ProgramFixtures extends \Doctrine\Bundle\FixturesBundle\Fixture implements
 
             'year' => 2010,
 
+            'poster' => 'https://m.media-amazon.com/images/M/MV5BZmFlMTA0MmUtNWVmOC00ZmE1LWFmMDYtZTJhYjJhNGVjYTU5XkEyXkFqcGdeQXVyMTAzMDM4MjM0._V1_.jpg',
+
         ],
 
         'The Haunting Of Hill House' => [
@@ -29,6 +31,8 @@ class ProgramFixtures extends \Doctrine\Bundle\FixturesBundle\Fixture implements
             'country' => 'USA',
 
             'year' => 2010,
+
+            'poster' => 'https://m.media-amazon.com/images/M/MV5BMTU4NzA4MDEwNF5BMl5BanBnXkFtZTgwMTQxODYzNjM@._V1_SY1000_CR0,0,674,1000_AL_.jpg'
 
         ],
 
@@ -40,6 +44,8 @@ class ProgramFixtures extends \Doctrine\Bundle\FixturesBundle\Fixture implements
 
             'year' => 2011,
 
+            'poster' => 'https://m.media-amazon.com/images/M/MV5BODZlYzc2ODYtYmQyZS00ZTM4LTk4ZDQtMTMyZDdhMDgzZTU0XkEyXkFqcGdeQXVyMzQ2MDI5NjU@._V1_SY1000_CR0,0,666,1000_AL_.jpg'
+
         ],
 
         'Love Death And Robots' => [
@@ -49,6 +55,8 @@ class ProgramFixtures extends \Doctrine\Bundle\FixturesBundle\Fixture implements
             'country' => 'USA',
 
             'year' => 2019,
+
+            'poster' => 'https://m.media-amazon.com/images/M/MV5BMTc1MjIyNDI3Nl5BMl5BanBnXkFtZTgwMjQ1OTI0NzM@._V1_SY1000_CR0,0,674,1000_AL_.jpg'
 
         ],
 
@@ -60,6 +68,8 @@ class ProgramFixtures extends \Doctrine\Bundle\FixturesBundle\Fixture implements
 
             'year' => 2014,
 
+            'poster' => 'https://m.media-amazon.com/images/M/MV5BNmE5MDE0ZmMtY2I5Mi00Y2RjLWJlYjMtODkxODQ5OWY1ODdkXkEyXkFqcGdeQXVyNjU2NjA5NjM@._V1_SY1000_CR0,0,695,1000_AL_.jpg'
+
         ],
 
         'Fear The Walking Dead' => [
@@ -69,6 +79,8 @@ class ProgramFixtures extends \Doctrine\Bundle\FixturesBundle\Fixture implements
             'country' => 'USA',
 
             'year' => 2015,
+
+            'poster' => 'https://m.media-amazon.com/images/M/MV5BYWNmY2Y1NTgtYTExMS00NGUxLWIxYWQtMjU4MjNkZjZlZjQ3XkEyXkFqcGdeQXVyMzQ2MDI5NjU@._V1_SY1000_CR0,0,666,1000_AL_.jpg'
 
         ],
 
@@ -85,6 +97,7 @@ class ProgramFixtures extends \Doctrine\Bundle\FixturesBundle\Fixture implements
             $program->setSummary($data['summary']);
             $program->setCountry($data['country']);
             $program->setYear($data['year']);
+            $program->setPoster($data['poster']);
             $manager->persist($program);
             $this->addReference('program_' . $i, $program);
             $i++;

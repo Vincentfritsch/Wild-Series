@@ -3,7 +3,7 @@
 {% block body %}
     {{ form_start(formSearch) }}
         {{ form_row(formSearch.searchField, {'attr' : {'placeholder': "Entrer une série"}}) }}
-    <button type="submit" name="btnSearch">Rechercher</button>
+    <button type="submit" class="btn btn-primary" name="btnSearch">Rechercher</button>
     {{ form_end(formSearch) }}
 {{ serie }}
 

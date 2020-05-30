@@ -1,17 +1,22 @@
 $theme-colors: (
-    "secondary": #FFA02B,
-    "primary": #2B5BAD
+    "secondary": #2B5BAD,
+    "primary": #FFA02B,
 );
-@import "~bootstrap/scss/bootstrap";
-@import "node_modules/bootstrap/scss/_variables.scss";
+$body-bg: #2B5BAD;
 $principalshade1: #4A71B4;
 $principalshade2: #295BAF;
 $complementshade1: #FFB559;
 $complementshade2: #ff9e27;
-
+@import "~bootstrap/scss/bootstrap";
+@import "node_modules/bootstrap/scss/_variables.scss";
 body {
-    background-color: $complementshade1;
+    background-color: $principalshade2;
+
 }
-nav a{
-    color: whitesmoke;
+table{
+    color:whitesmoke;
 }
+
+
+
+

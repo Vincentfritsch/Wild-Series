@@ -1,11 +1,11 @@
 
 {% extends 'base.html.twig' %}
-
+{% block title %}Catégories{% endblock %}
 {% block body %}
 <h1>Liste des catégories</h1>
 <ul>
     {% for category in categories %}
-        <li>{{ category.name }}</li>
+        <a href="{{ path('wild_show_category', {categoryName : category.name}) }}"> <li>{{ category.name }}</li></a>
     {% endfor %}
 </ul>
 
