@@ -76,9 +76,13 @@ class EpisodeController extends AbstractController
     {
         $form = $this->createForm(EpisodeType::class, $episode);
         $form->handleRequest($request);
+        $slugify = new Slugify();
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            $entityManager = $this->getDoctrine()->getManager();
+            $slug = $slugify->generate($episode->getTitle());
+            $episode->setSlug($slug);
+            $entityManager->flush();
 
             return $this->redirectToRoute('episode_index');
         }
