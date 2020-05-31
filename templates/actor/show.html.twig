@@ -5,9 +5,16 @@ Nom {{ actor.name }}
     <ul>
         {% for program in actor.programs %}
 
-            <a href="{{ path('program_show', {'id' : program.id}) }}"> <li>{{ program.title }} </li></a>
+            <a href="{{ path('program_show', {'slug' : program.slug}) }}"> <li>{{ program.title }} </li></a>
         {% else %}
             <li>Aucune série pour cet acteur</li>
         {% endfor %}
     </ul>
+
+
+    <a href="{{ path('actor_index') }}">back to list</a>
+
+    <a href="{{ path('actor_edit', {'slug': actor.slug}) }}">edit</a>
+
+    {{ include('actor/_delete_form.html.twig') }}
 {% endblock %}

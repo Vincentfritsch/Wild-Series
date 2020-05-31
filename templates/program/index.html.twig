@@ -14,6 +14,7 @@
                 <th>Poster</th>
                 <th>Country</th>
                 <th>Year</th>
+                <th>slug</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -26,9 +27,10 @@
                 <td>{{ program.poster }}</td>
                 <td>{{ program.country }}</td>
                 <td>{{ program.year }}</td>
+                <td>{{ program.slug }}</td>
                 <td>
-                    <a href="{{ path('program_show', {'id': program.id}) }}">show</a>
-                    <a href="{{ path('program_edit', {'id': program.id}) }}">edit</a>
+                    <a href="{{ path('program_show', {'slug': program.slug}) }}">show</a>
+                    <a href="{{ path('program_edit', {'slug': program.slug}) }}">edit</a>
                 </td>
             </tr>
         {% else %}

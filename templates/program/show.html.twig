@@ -31,13 +31,17 @@
                 <th>Year</th>
                 <td>{{ program.year }}</td>
             </tr>
+            <tr>
+                <th>Slug</th>
+                <td>{{ program.slug }}</td>
+            </tr>
         </tbody>
     </table>
     <strong>Acteur :</strong>
     <ul>
         {% for actor in program.actors %}
 
-            <a href="{{ path('actor_show', {'id' : actor.id}) }}"> <li>{{ actor.name }} </li></a>
+            <a href="{{ path('actor_show', {'slug' : actor.slug}) }}"> <li>{{ actor.name }} </li></a>
         {% else %}
             <li>Aucun acteur pour cette série</li>
         {% endfor %}
@@ -47,7 +51,7 @@
 
     <a href="{{ path('program_index') }}">back to list</a>
 
-    <a href="{{ path('program_edit', {'id': program.id}) }}">edit</a>
+    <a href="{{ path('program_edit', {'slug': program.slug}) }}">edit</a>
 
     {{ include('program/_delete_form.html.twig') }}
 {% endblock %}
