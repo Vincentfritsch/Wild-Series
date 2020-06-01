@@ -1,0 +1,23 @@
+{% apply inline_css(source('@css/app.css')) %}
+<header class="bg-primary">
+    {%  include 'navbar.html.twig' %}
+</header>
+        <h1>Welcome Wilder ! New incomming {{ program.title }} !</h1>
+        <div class="container-fluid">
+            <div class="container align-content-center">
+                <div class="col-sm-6">
+                    <div class="card" style="width: 20rem;">
+                        <div class="card-body">
+                            <a href="https://127.0.0.1:8000/wild/show/{{ program.slug }}">    <img src="{{ program.poster }}" class="card-img-top" alt="{{ program.title }}"></a>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ program.title }}</h5>
+                                <p class="card-text">{{ program.summary }}</p>
+                                <a href="https://127.0.0.1:8000/wild/show/{{ program.slug }}" class="btn btn-primary">Voir plus</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endapply %}

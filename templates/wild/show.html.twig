@@ -15,6 +15,8 @@
                     <li><h4><a href="{{ path('wild_season', {'id':season.id })}}">Saison {{ season.number }}</a></h4></li>
 
                     <li><h5>Histoire :</h5> <p>{{ season.description }} </p></li>
+                    {% else %}
+                    <p class="alert alert-danger"> Aucune saison pour l'instant en cours</p>
                 {% endfor %}
             </ul>
         </div>

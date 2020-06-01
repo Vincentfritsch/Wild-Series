@@ -9,7 +9,8 @@
      <a href="{{ path('wild_episode', {'slug': episode.slug}) }}"> <li> <h4>Episode N°{{ episode.number}} : {{ episode.title }}</h4></li></a>
 
 </ul>
-
+{% else %}
+    <p class="alert alert-danger">Aucun épisode pour l'instant en cours</p>
 {% endfor %}
     <a href="{{ path('wild_show', { 'slug':  serie.slug}) }}">Retour aux saisons</a>
     <p><a href="{{ path('wild_index') }}">Retour à l'accueil</a></p>
