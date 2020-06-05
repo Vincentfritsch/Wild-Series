@@ -12,7 +12,7 @@
     </div>
 </div>
     <a href="{{ path('wild_season', {'id':season.id })}}">Retour à la liste des épisodes de la saison {{ season.number }}</a>
-    <p><a href="{{ path('wild_show', { 'slug':  program.title|lower}) }}">Retour aux saisons</a></p>
+    <p><a href="{{ path('wild_show', { 'slug':  program.slug}) }}">Retour aux saisons</a></p>
     <p><a href="{{ path('wild_index') }}"> Retour à l'accueil </a></p>
 
 {% endblock %}

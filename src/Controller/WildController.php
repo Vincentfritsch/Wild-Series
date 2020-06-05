@@ -55,9 +55,6 @@ class WildController extends AbstractController
                 'seasons' => $seasons
             ]);
                 }
-            return $this->render('navbar.html.twig', [
-                'formSearch' =>$formSearch->createView()
-            ]);
         }
 
         $programs = $this->getDoctrine()
@@ -79,7 +76,7 @@ class WildController extends AbstractController
      * Getting a program with a formatted slug title
      *
      * @param string $slug The slugger
-     * @Route("/show/{slug<^[a-z0-9- ]+$>}",
+     * @Route("/show/{slug<^[a-z0-9-]+$>}",
      *     methods={"GET"},
      *     defaults={"slug" = null},
      *     name="show")
@@ -120,6 +117,7 @@ class WildController extends AbstractController
     {
         $categories = $this->getDoctrine()->getRepository(Category::class)
             ->findOneBy( ['name'=> $categoryName]);
+
         $series = $this->getDoctrine()->getRepository(Program::class)
             ->findBy(
                 ['category' => $categories],

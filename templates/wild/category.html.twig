@@ -3,9 +3,9 @@
     {% for serie in series %}
     <div class="media">
 
-        <a href="{{ path('wild_show', {'slug': serie.title|lower}) }}"> <img class="align-self-start mr-3" src="{{ serie.poster }}" alt="{{ serie.title }} poster"></a>
+        <a href="{{ path('wild_show', {'slug': serie.slug}) }}"> <img class="align-self-start mr-3" src="{{ serie.poster }}" alt="{{ serie.title }} poster"></a>
         <div class="media-body">
-            <a href="{{ path('wild_show', {'slug': serie.title|lower}) }}"> <h1 class="mt-0">{{ serie.id }} / {{ serie.title }}</h1></a>
+            <a href="{{ path('wild_show', {'slug': serie.slug}) }}"> <h1 class="mt-0">{{ serie.id }} / {{ serie.title }}</h1></a>
             <p>{{ serie.summary }}</p>
             <p>Categorie : {{ serie.category.name }}</p>
         </div>
