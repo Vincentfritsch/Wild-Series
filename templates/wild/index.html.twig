@@ -5,7 +5,9 @@
         {{ form_row(formSearch.searchField, {'attr' : {'placeholder': "Entrer une série"}}) }}
     <button type="submit" class="btn btn-primary" name="btnSearch">Rechercher</button>
     {{ form_end(formSearch) }}
-{{ serie }}
+    {% if serie  %}
+    <p class="alert alert-danger">{{ serie }}</p>
+    {% endif %}
 
 <h1>{{ website }} : Toutes les séries de la table program :</h1>
     {%  for program in programs %}

@@ -11,8 +11,9 @@
             </div>
             <div class="row">
                 <a href="{{ path('actor_index') }}">back to list</a>
-
-                {{ include('actor/_delete_form.html.twig') }}
+                {% if is_granted('ROLE_ADMIN')  %}
+                     {{ include('actor/_delete_form.html.twig') }}
+                {% endif %}
             </div>
         </div>
     </div>

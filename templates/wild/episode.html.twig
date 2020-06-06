@@ -18,6 +18,11 @@
     <div class="card">
         <div class="card-header">
             Commentaire de {{ comment.author.username }}
+            {% if is_granted('ROLE_ADMIN') %}
+                <p>{{ include('comment/_delete_form.html.twig') }}</p>
+            {% elseif app.user and comment.author.id == app.user.id %}
+                <p>{{ include('comment/_delete_form.html.twig') }}</p>
+            {% endif %}
         </div>
         <div class="card-body">
             <blockquote class="blockquote mb-0">

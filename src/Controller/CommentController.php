@@ -38,7 +38,6 @@ class CommentController extends AbstractController
     public function new(Request $request, Episode $episode):
     Response
     {
-        $user = new User();
         $comment = new Comment();
 
         $comment->setEpisode($episode);
@@ -57,6 +56,7 @@ class CommentController extends AbstractController
         }
 
         return $this->render('comment/new.html.twig', [
+            'user'    => $user->getId(),
             'episode' => $episode,
             'comment' => $comment,
             'form'    => $form->createView(),
@@ -112,6 +112,7 @@ class CommentController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('comment_index');
+        return $this->redirectToRoute('wild_episode', ['slug'=>
+            $comment->getEpisode()->getSlug()]);
     }
 }

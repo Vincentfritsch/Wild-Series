@@ -7,6 +7,7 @@ use App\Entity\Category;
 use App\Entity\Episode;
 use App\Entity\Program;
 use App\Entity\Season;
+use App\Entity\User;
 use App\Entity\Comment;
 use App\Form\CategoryType;
 use App\Form\ProgramSearchType;
@@ -176,10 +177,11 @@ class WildController extends AbstractController
 
         $season = $episode->getSeason();
         $comments = $episode->getComments();
-
+       ;
         $program = $season->getProgram();
 
         return $this->render('wild/episode.html.twig', [
+
             'episode'  => $episode,
             'season'   => $season,
             'program'  => $program,

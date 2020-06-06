@@ -28,6 +28,7 @@
                     <a class="dropdown-item" href="{{ path('wild_show_categories') }}">Voir toutes les catégories</a>
                 </div>
             </li>
+            {% if is_granted('ROLE_ADMIN') %}
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Ajouter
@@ -40,6 +41,7 @@
 
                 </div>
             </li>
+            {% endif %}
             {% if app.user %}
                 <li class="nav-item active">
                 {{ app.user.username }}</li>
