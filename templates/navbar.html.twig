@@ -7,12 +7,14 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
+
             <li class="nav-item active">
                 <a class="nav-link" href="{{ path('app_index') }}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ path('wild_index') }}">Wild</a>
-            </li><li class="nav-item">
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="{{ path('actor_index') }}">Acteurs</a>
             </li>
             <li class="nav-item dropdown">
@@ -38,7 +40,19 @@
 
                 </div>
             </li>
+            {% if app.user %}
+                <li class="nav-item active">
+                {{ app.user.username }}</li>
+                <li class="nav-item active">
+                        <a class="nav-link" href="{{ path('app_logout') }}">Se déconnecter <span class="sr-only">(current)</span></a>
+                </li>
+            {% else %}
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ path('app_login') }}">Se connecter <span class="sr-only">(current)</span></a>
+                </li>
+            {% endif %}
         </ul>
+
 
     </div>
 </nav>

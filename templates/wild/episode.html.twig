@@ -2,7 +2,7 @@
 {% block title %}{{ program.title }}{% endblock %}
 {% block body %}
 <div class="media">
-    <img class="align-self-start mr-3" src="{{ program.poster }}" alt="{{ program.title }} poster">
+    <img class="align-self-start mr-3" src="{{ program.poster }}" alt="{{ program.title }} poster" height="500px">
     <div class="media-body">
         <h1 class="mt-0">{{ program.title }}</h1>
         <p>Categorie : {{ program.Category.name }}</p>
@@ -10,8 +10,26 @@
         <p>Résumé : {{ episode.synopsis }}</p>
 
     </div>
-</div>
-    <a href="{{ path('wild_season', {'id':season.id })}}">Retour à la liste des épisodes de la saison {{ season.number }}</a>
+    {% if app.user %}
+    <div><a href="{{ path('comment_new',{'slug':episode.slug}) }}">Ajouter un commentaire</a> </div>
+    {% endif %}
+    </div>
+    {% for comment in comments %}
+    <div class="card">
+        <div class="card-header">
+            Commentaire de {{ comment.author.username }}
+        </div>
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <p>{{ comment.comment }}</p>
+                <footer class="blockquote-footer"> Note: {{ comment.rate}} <cite title="Source Title"> pour l'épisode: {{ episode.title }}</cite></footer>
+            </blockquote>
+        </div>
+    </div>
+    {% else %}
+    <p class="alert alert-danger">Aucun commentaire pour cet épisode</p>
+    {% endfor %}
+    <a href="{{ path('wild_season', {'id':season.id }) }}">Retour à la liste des épisodes de la saison {{ season.number }}</a>
     <p><a href="{{ path('wild_show', { 'slug':  program.slug}) }}">Retour aux saisons</a></p>
     <p><a href="{{ path('wild_index') }}"> Retour à l'accueil </a></p>
 
