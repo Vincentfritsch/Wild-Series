@@ -26,8 +26,7 @@ class Program
      * @Assert\NotBlank(message="ne me laisse pas tout vide")
      * @Assert\Length(max="255", maxMessage="Le titre saisie est
       trop long, il ne devrait pas dépasser {{ limit }} caractères")
-     * @Assert\Regex("/plus belle la vie/", match=false, message="On parle
-           de vraies séries")
+     *ggggggg
      */
     private $title;
 

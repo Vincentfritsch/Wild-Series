@@ -47,21 +47,21 @@ class WildController extends AbstractController
                 ->getRepository(Program::class)
                 ->findOneBy(['title'=>$data]);
             if (!$program) {
-               $serie = "Il n'y a aucune série nommée : \" $data[searchField] \"";
+                $serie = "Il n'y a aucune série nommée : \" $data[searchField] \"";
 
             }
             else { $seasons = $program->getSeasons();
                 return $this->render('wild/show.html.twig', [
-                'slug' => $program->getTitle(),
-                'program' => $program,
-                'seasons' => $seasons
-            ]);
-                }
+                    'slug' => $program->getTitle(),
+                    'program' => $program,
+                    'seasons' => $seasons
+                ]);
+            }
         }
 
         $programs = $this->getDoctrine()
-                        ->getRepository(Program::class)
-                        ->findAll();
+            ->getRepository(Program::class)
+            ->findAll();
         if (!$programs) {
             throw $this->createNotFoundException(
                 'No program found in program\'s tables.'
@@ -177,7 +177,7 @@ class WildController extends AbstractController
 
         $season = $episode->getSeason();
         $comments = $episode->getComments();
-       ;
+
         $program = $season->getProgram();
 
         return $this->render('wild/episode.html.twig', [

@@ -5,10 +5,16 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @UniqueEntity(fields={"email"},
+ *     errorPath="email",
+ *     message="There is already an
+     account with this email",
+ * )
  */
 class User implements UserInterface
 {
@@ -18,6 +24,11 @@ class User implements UserInterface
      * @ORM\Column(type="integer")
      */
     private $id;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $username;
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
@@ -40,10 +51,6 @@ class User implements UserInterface
      */
     private $comments;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $username;
 
     /**
      * @ORM\Column(type="text", nullable=true)
