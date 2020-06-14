@@ -36,6 +36,9 @@ security:
     access_control:
          - { path: ^/admin, roles: ROLE_ADMIN }
          - { path: ^/program, roles: ROLE_SUBSCRIBER }
+         - { path: ^/actor, roles: ROLE_SUBSCRIBER }
+         - { path: ^/season, roles: ROLE_SUBSCRIBER }
+         - { path: ^/episode, roles: ROLE_SUBSCRIBER }
          - { path: ^/wild, roles: IS_AUTHENTICATED_ANONYMOUSLY }
          -
     role_hierarchy:
