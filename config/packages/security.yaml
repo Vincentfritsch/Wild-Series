@@ -35,10 +35,10 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
          - { path: ^/admin, roles: ROLE_ADMIN }
-         - { path: ^/program, roles: ROLE_SUBSCRIBER }
-         - { path: ^/actor, roles: ROLE_SUBSCRIBER }
-         - { path: ^/season, roles: ROLE_SUBSCRIBER }
-         - { path: ^/episode, roles: ROLE_SUBSCRIBER }
+         - { path: ^/program, roles: ROLE_USER }
+         - { path: ^/actor, roles: ROLE_USER }
+         - { path: ^/season, roles: ROLE_USER }
+         - { path: ^/episode, roles: ROLE_USER }
          - { path: ^/wild, roles: IS_AUTHENTICATED_ANONYMOUSLY }
          -
     role_hierarchy:
