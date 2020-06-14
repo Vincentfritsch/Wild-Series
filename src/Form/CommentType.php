@@ -14,8 +14,7 @@ class CommentType extends AbstractType
         $builder
             ->add('comment')
             ->add('rate')
-            ->add('episode')
-            ->add('author')
+
         ;
     }
 

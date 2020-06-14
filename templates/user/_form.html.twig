@@ -1,4 +1,12 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+   {{ form_row(form.username, {'label':'Votre nom'}) }}
+   {{ form_row(form.email, {'label':'Votre email'}) }}
+    {{ form_row(form.bio, {'label':'Votre bio'}) }}
+
+
+    {{ form_row(form.password, { 'attr': {'class': 'hidden-row'}}) }}
+
+
+
+    <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

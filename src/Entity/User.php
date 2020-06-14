@@ -10,10 +10,12 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
- * @UniqueEntity(fields={"email"},
- *     errorPath="email",
+ * @UniqueEntity(fields={"email","username"},
+ *     errorPath="email", *
  *     message="There is already an
      account with this email",
+ *     errorPath="username",
+ *     message="Ce nom existe déjà"
  * )
  */
 class User implements UserInterface

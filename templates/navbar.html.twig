@@ -43,10 +43,15 @@
             </li>
             {% endif %}
             {% if app.user %}
-                <li class="nav-item active">
-                {{ app.user.username }}</li>
+
                 <li class="nav-item active">
                         <a class="nav-link" href="{{ path('app_logout') }}">Se déconnecter <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-link active">
+                    {{ app.user.username }}
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ path('user_edit', {id:app.user.id}) }}">Mon profil <span class="sr-only">(current)</span></a>
                 </li>
             {% else %}
                 <li class="nav-item active">
