@@ -51,7 +51,7 @@
                     {{ app.user.username }}
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ path('user_edit', {id:app.user.id}) }}">Mon profil <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ path('user_edit', {username:app.user.username}) }}">Mon profil <span class="sr-only">(current)</span></a>
                 </li>
             {% else %}
                 <li class="nav-item active">

@@ -14,13 +14,11 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
 
-/**
- * @Route("/user")
- */
+
 class UserController extends AbstractController
 {
     /**
-     * @Route("/", name="user_index", methods={"GET"})
+     * @Route("/user", name="user_index", methods={"GET"})
      * @param UserRepository $userRepository
      * @return Response
      */
@@ -32,7 +30,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="user_new", methods={"GET","POST"})
+     * @Route("/user/new", name="user_new", methods={"GET","POST"})
      * @param Request $request
      * @return Response
      */
@@ -57,7 +55,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="user_show", methods={"GET"})
+     * @Route("/user/{id}", name="user_show", methods={"GET"})
      * @param User $user
      * @return Response
      */
@@ -69,7 +67,8 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="user_edit", methods={"GET","POST"})
+     * @Route("/my-profile/{username}/", name="user_edit", methods={"GET",
+     *     "POST"})
      * @param Request $request
      * @param User $user
      * @return Response
