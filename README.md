@@ -1,5 +1,5 @@
 # Wild-Series
 
-<h1> Security Video </h1>
+<h1> Register Video </h1>
 
-https://www.loom.com/share/873c5e22c4a745dc9974ba421c3cd4bc
+https://www.loom.com/share/8ea907b5fefb445da36bb1d6ac9b44a8
