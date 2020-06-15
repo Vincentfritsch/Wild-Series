@@ -26,8 +26,7 @@ class AppFixtures extends Fixture
             $program = new Program();
             $program->setTitle($faker->sentence(4, true));
             $program->setSummary($faker->text(100));
-            $program->setCategory($this->getReference('category_'.rand(0,
-                                                                       1000)));
+            $program->setCategory($this->getReference('category_'.$i));
             $program->setCountry($faker->country);
             $program->setSlug($slugify->generate($program->getTitle()));
             $program->setYear($faker->year($max = 'now'));

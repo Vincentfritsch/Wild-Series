@@ -36,15 +36,21 @@ class ProgramRepository extends ServiceEntityRepository
     }
     */
 
-    /*
-    public function findOneBySomeField($value): ?Program
+    public function findAllWithCategories()
     {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+        $qb = $this->createQueryBuilder('p')
+            ->innerJoin('p.category', 'c' )
+            ->addSelect('c')
+            ->getQuery();
+
+        return $qb->execute();
     }
-    */
+
+    public function findAllWithCategoriesAndActors()
+    {
+        $em = $this->getEntityManager();
+        $query = $em->createQuery('SELECT a, c, t FROM App\Entity\Program a INNER JOIN a.category c LEFT JOIN a.actors t');
+
+        return $query->execute();
+    }
 }

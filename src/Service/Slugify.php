@@ -309,7 +309,7 @@ class Slugify
     public function generate(string $input) : string
     {
         $newText = $this->replaceSpecialChar($input);
-        if ($newText) {
+
 
             $preFinal = explode('-', str_replace(' ', '-', strtolower(trim($newText)
             )));
@@ -327,8 +327,7 @@ class Slugify
                 }
             }
             return implode('-', $finalSlug);
-        }
-        return $newText;
+
         }
 
 
