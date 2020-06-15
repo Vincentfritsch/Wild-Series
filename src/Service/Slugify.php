@@ -309,27 +309,27 @@ class Slugify
     public function generate(string $input) : string
     {
         $newText = $this->replaceSpecialChar($input);
+        if ($newText) {
 
-        $preFinal = explode('-',str_replace(' ','-',strtolower(trim($newText)
-        )));
-        $count = count($preFinal);
-        $finalSlug[0] = $preFinal[0];
-        $j = 1;
-        for($i = 1; $i < $count; $i++)
-        {
-            if( $preFinal[$i] != $preFinal[$i-1] )
-                {
+            $preFinal = explode('-', str_replace(' ', '-', strtolower(trim($newText)
+            )));
+            $count = count($preFinal);
+            $finalSlug[0] = $preFinal[0];
+            $j = 1;
+            for ($i = 1; $i < $count; $i++) {
+                if ($preFinal[$i] != $preFinal[$i - 1]) {
                     $finalSlug[$j] = $preFinal[$i];
                     $j++;
-                }
-            else { if( $preFinal[$i] != $finalSlug[$j-1])
-                    {
-                        $finalSlug[$j]=$preFinal[$i];
+                } else {
+                    if ($preFinal[$i] != $finalSlug[$j - 1]) {
+                        $finalSlug[$j] = $preFinal[$i];
                     }
-                  }
-         }
-        return implode('-', $finalSlug);
-    }
+                }
+            }
+            return implode('-', $finalSlug);
+        }
+        return $newText;
+        }
 
 
 }
