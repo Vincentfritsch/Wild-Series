@@ -6,7 +6,18 @@
     <div class="media">
         <img class="align-self-start mr-3" src="{{ program.poster }}" alt="{{ program.title }} poster">
         <div class="media-body">
-            <h1 class="mt-0">{{ program.title }}</h1>
+            <h1 class="mt-0">
+                {{ program.title }}
+{% is app.user %}
+            {% set movies=app.user.watchlist %}
+            {% for movie in movies %}
+            {% if movie.title == program.title %}
+                <i class="fas fa-heart"></i>
+            {% else %}
+                <i class="far fa-heart"></i>
+                    {% endif %}
+                    {% endfor %}
+{% endif %}</h1>
             <p>{{ program.summary }}</p>
             <p>Categorie : {{ program.Category.name }}</p>
             <p>Saisons</p>

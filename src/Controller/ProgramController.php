@@ -6,6 +6,7 @@ use App\Entity\Program;
 use App\Form\ProgramType;
 use App\Repository\ProgramRepository;
 use App\Service\Slugify;
+use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -130,5 +131,22 @@ class ProgramController extends AbstractController
         }
 
         return $this->redirectToRoute('program_index');
+    }
+
+    /**
+     * @Route("/{id}/watchlist", name="program_watchlist", methods={"GET",
+     * "POST"})
+     * @param Program $program
+     */
+    public function addToWatchlist(Program $program)
+    {
+        $manager = $this->getDoctrine()->getManager();
+        $user = $this->getUser();
+        $user->addWatchlist($program);
+        $manager->persist($user);
+        $manager->flush();
+        return $this->redirectToRoute('wild_show', [
+            'slug' => $program->getSlug()
+        ]);
     }
 }

@@ -8,7 +8,8 @@ $principalshade2: #295BAF;
 $complementshade1: #FFB559;
 $complementshade2: #ff9e27;
 @import "~bootstrap/scss/bootstrap";
-@import "node_modules/bootstrap/scss/_variables.scss";
+//@import "node_modules/bootstrap/scss/_variables.scss";
+@import "node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
 body {
     background-color: $principalshade2;
 
