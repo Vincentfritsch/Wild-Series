@@ -26,6 +26,7 @@
                     <a class="dropdown-item" href="{{ path('wild_show_category', { categoryName : 'horreur'}) }}">Category: Horreur</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="{{ path('wild_show_categories') }}">Voir toutes les catégories</a>
+                    <a class="dropdown-item" href="{{ path('actor_index') }}">Voir tous les acteurs</a>
                 </div>
             </li>
             {% if is_granted('ROLE_ADMIN') %}
@@ -36,6 +37,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item " href="{{ path('category_add') }}">Ajouter une catégorie</a>
                     <a class="dropdown-item " href="{{ path('program_new') }}">Ajouter une série</a>
+                    <a class="dropdown-item " href="{{ path('actor_new') }}">Ajouter un acteur</a>
                     <a class="dropdown-item " href="{{ path('season_new') }}">Ajouter une saison</a>
                     <a class="dropdown-item " href="{{ path('episode_new') }}">Ajouter un épisode</a>
 

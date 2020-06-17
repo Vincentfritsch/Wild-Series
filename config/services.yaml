@@ -5,6 +5,9 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     mailer_from: '%env(resolve:MAILER_FROM_ADDRESSE)%'
+    upload_directory: '%kernel.project_dir%/public/uploads/images'
+    app.path.upload_programs : /uploads/images/program
+    app.path.upload_actors : /uploads/images/actor
 
 services:
     # default configuration for services in *this* file

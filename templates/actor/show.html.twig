@@ -1,6 +1,9 @@
 {% extends 'base.html.twig'%}
 {% block body %}
 Nom {{ actor.name }}
+    <div class="media">
+    <img class="align-self-start mr-3" src="{{ (vich_uploader_asset(actor, 'imageFile')) }}" alt="{{ actor.name }} poster" height="200px">
+    </div>
     Séries :
     <ul>
         {% for program in actor.programs %}

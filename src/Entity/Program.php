@@ -2,15 +2,19 @@
 
 namespace App\Entity;
 
+use DateTime;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProgramRepository")
  * @UniqueEntity("title", message="Ce titre existe déjà")
+ * @Vich\Uploadable
  */
 class Program
 {
@@ -42,9 +46,21 @@ class Program
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Assert\Length(max="255")
+     * @var string
      */
     private $poster;
+
+    /**
+     * @Vich\UploadableField(mapping="program_poster_file",
+     *     fileNameProperty="poster")
+     * @var File
+     */
+    private $posterFile;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $updatedAt;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="programs")
@@ -79,6 +95,7 @@ class Program
      * @ORM\Column(type="string", length=255)
      */
     private $slug;
+
 
     public function __construct()
     {
@@ -264,4 +281,20 @@ class Program
 
         return $this;
     }
+
+    public function setPosterFile(File $image = null): self
+    {
+        $this->posterFile = $image;
+        if ($image) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
+        return $this;
+    }
+
+    public function getPosterFile(): ?File
+    {
+        return $this->posterFile;
+    }
+
 }

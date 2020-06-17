@@ -16,7 +16,7 @@
                     <div class="col-sm-4">
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
-                                <a href="{{ path('wild_show', {'slug': program.slug}) }}">    <img src="{{ program.poster }}" class="card-img-top" alt="{{ program.title }}"></a>
+                                <a href="{{ path('wild_show', {'slug': program.slug}) }}">    <img src="{{ (vich_uploader_asset(program, 'posterFile')) }}" class="card-img-top" alt="{{ program.title }}"></a>
                                 <div class="card-body">
                                     <h5 class="card-title">{{ program.title }} / {{ program.category.name }}</h5>
                                     <ul> {% for actor in program.actors %}

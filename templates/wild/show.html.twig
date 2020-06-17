@@ -4,11 +4,11 @@
 {% block body %}
 
     <div class="media">
-        <img class="align-self-start mr-3" src="{{ program.poster }}" alt="{{ program.title }} poster">
+        <img class="align-self-start mr-3" src="{{ (vich_uploader_asset(program, 'posterFile')) }}" alt="{{ program.title }} poster" height="300px">
         <div class="media-body">
             <h1 class="mt-0">
                 {{ program.title }}
-{% is app.user %}
+{% if app.user %}
             {% set movies=app.user.watchlist %}
             {% for movie in movies %}
             {% if movie.title == program.title %}

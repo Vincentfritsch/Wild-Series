@@ -137,8 +137,9 @@ class ProgramController extends AbstractController
      * @Route("/{id}/watchlist", name="program_watchlist", methods={"GET",
      * "POST"})
      * @param Program $program
+     * @return Response
      */
-    public function addToWatchlist(Program $program)
+    public function addToWatchlist(Program $program): Response
     {
         $manager = $this->getDoctrine()->getManager();
         $user = $this->getUser();
