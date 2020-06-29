@@ -20,7 +20,8 @@ class UserType extends AbstractType
             ->add('email')
             ->add('password')
 
-            ->add('bio', CKEditorType::class)
+            ->add('bio',CKEditorType::class);
+
         ;
     }
 

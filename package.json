@@ -19,6 +19,7 @@
         "build": "encore production --progress"
     },
     "dependencies": {
-        "@fortawesome/fontawesome-free": "^5.13.0"
+        "@fortawesome/fontawesome-free": "^5.13.0",
+        "ckeditor": "^4.12.1"
     }
 }

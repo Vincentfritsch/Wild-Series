@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="LPJNul_" resname="hello">
+        <source>hello</source>
+        <target>Hello</target>
+      </trans-unit>
+      <trans-unit id="CXmLOF4" resname="account.registration">
+        <source>account.registration</source>
+        <target>Register</target>
+      </trans-unit>
+      <trans-unit id="E_t5j6Q" resname="account.login">
+        <source>account.login</source>
+        <target>Sign In</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

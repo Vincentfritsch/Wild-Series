@@ -19,13 +19,23 @@
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Categories
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                   {{ render(controller(
+                       'App\\Controller\\WildController::showCategory'
+                   )) }}
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Séries
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{{ path('program_index') }}">Toutes les séries</a>
                     <a class="dropdown-item" href="{{ path('wild_show_category', { categoryName : 'horreur'}) }}">Category: Horreur</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{{ path('wild_show_categories') }}">Voir toutes les catégories</a>
+                   {# <a class="dropdown-item" href="{{ path('wild_show_categories') }}">Voir toutes les catégories</a>#}
                     <a class="dropdown-item" href="{{ path('actor_index') }}">Voir tous les acteurs</a>
                 </div>
             </li>

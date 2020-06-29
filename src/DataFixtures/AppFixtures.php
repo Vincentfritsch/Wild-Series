@@ -9,6 +9,7 @@ use App\Service\Slugify;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use Faker;
+use Vich\UploaderBundle\Templating\Helper\UploaderHelper;
 
 class AppFixtures extends Fixture
 {

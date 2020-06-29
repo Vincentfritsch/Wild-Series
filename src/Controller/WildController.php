@@ -7,18 +7,11 @@ use App\Entity\Category;
 use App\Entity\Episode;
 use App\Entity\Program;
 use App\Entity\Season;
-use App\Entity\User;
-use App\Entity\Comment;
-use App\Form\CategoryType;
 use App\Form\ProgramSearchType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use function preg_replace;
-use function strip_tags;
-use function ucwords;
-use function var_dump;
 
 /**
  * @Route("/wild", name="wild_")
@@ -134,12 +127,11 @@ class WildController extends AbstractController
 
     /**
      * @return Response
-     * @Route("/showcategory", name = "show_categories")
      */
     public function showCategory()
     {   $categories = $this->getDoctrine()->getRepository(Category::class)
                             ->findAll();
-         return $this->render('wild/showcategory.html.twig', [
+         return $this->render('category/_show_by_categories.html.twig', [
              'categories' => $categories
          ]);
     }
